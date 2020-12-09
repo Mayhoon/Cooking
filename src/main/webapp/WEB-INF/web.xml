@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+<!--Servlet name need to match each other but other than that can be named anything-->
+<!--The url pattern needs to be called by the action attribute of the html form-->
+<!--    <servlet>-->
+<!--        <servlet-name>AdditionService</servlet-name>-->
+<!--        <servlet-class>com.kochen.servlet.AdditionServlet</servlet-class>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>AdditionService</servlet-name>-->
+<!--        <url-pattern>/addition</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>SquarerootService</servlet-name>-->
+<!--        <servlet-class>com.kochen.servlet.SquarerootServlet</servlet-class>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>SquarerootService</servlet-name>-->
+<!--        <url-pattern>/squareroot</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+</web-app>
