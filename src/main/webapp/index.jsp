@@ -1,34 +1,26 @@
-<%@ page import="java.io.PrintWriter" %><%--
-  Created by IntelliJ IDEA.
-  User: MX
-  Date: 12/8/2020
-  Time: 9:34 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<style><%@include file="/css/index.css"%></style>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="<c:url value='css/buttons.css' />"/>
     <title>Title</title>
+    <form action="search">
+        <input type="text" id="category" name="Category" onchange=""><br>
+        <input type="button" id="1" name="Braten" class="imageCategoryButton font">
+        <input type="button" id="2" name="Fisch" class="imageCategoryButton font">
+        <input type="button" id="3" name="Suppe" class="imageCategoryButton font">
+        <input type="button" id="4" name="Vegetarisch" class="imageCategoryButton font">
+        <input type="button" id="5" name="Pizza" class="imageCategoryButton font">
+        <input type="button" id="6" name="Pasta" class="imageCategoryButton font">
+    </form>
+
+    <div class="wrapper">
+        <a href="#"><span>Hover Me!</span></a>
+    </div>
+
+
+
 </head>
 <body>
 
-<div class="flex">
-    <a href="demo" class="bttn">Rezepte</a>
-
-<%--    <form action="demo" method="get">--%>
-<%--        <input type="submit" name="Suche Rezepte" class="bttn"/>--%>
-<%--    </form>--%>
-</div>
-
-<div class="searchOutput"></div>
-
-<%--<c:out value="${label}"></c:out>--%>
-<c:forEach items="${recipeList}" var="recipes">
-    <br>
-    <p>${recipes.get("name")}</p>
-</c:forEach>
 </body>
 </html>
