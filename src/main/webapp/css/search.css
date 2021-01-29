@@ -1,3 +1,5 @@
+/*--Global Styles--*/
+/*@import url('https://fonts.googleapis.com/css?family=Fjalla+One');*/
 
 html, body {
     height: 100%;
@@ -7,33 +9,6 @@ html, body {
 body {
     padding: 0px;
     margin: 0;
-    /*5be7a9*/
-    /*e8e8e8*/
-    background: #e8e8e8;
-}
-
-/*@font-face {*/
-/*    font-family: 'Open Sans',serif;*/
-/*    !*font-family: 'Open Sans';*!*/
-/*    !*src: url('https://fonts.google.com/specimen/Redressed#standard-styles') format('ttf')*!*/
-/*}*/
-
-
-.font {
-    text-decoration: none;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Chakra Petch', sans-serif;
-    /*font-family: 'Langar-Regular';*/
-    font-size: 18px;
-    color: #222831;
-}
-
-.border {
-    border: 3px solid #1a1a1b;
-    border-radius: 30px;
-    -moz-border-radius:30px;
-    -webkit-border-radius:30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .searchOutputBlock {
@@ -41,11 +16,6 @@ body {
     height: 150px;
     background-color: #f73859;
     margin: auto;
-}
-
-.p {
-    text-color: #d84c73;
-    float: right;
 }
 
 .inputField {
@@ -85,8 +55,6 @@ body {
 }
 
 .time {
-    /*text-align: center;*/
-    /*align-self: flex-start;*/
     margin-top: 0px;
     margin-left: 0px;
     padding-left: 10px;
@@ -98,15 +66,78 @@ body {
     margin-top: 110px;
     margin-left: 12px;
     white-space: nowrap;
-    /*text-decoration: none;*/
 }
 
-.bg {
-    background-color: #222831;
+.button {
+    /*position: relative;*/
+    /*display: compact;*/
+    margin: 20px;
+    width: 120px;
+    height: 80px;
+    font-size: 20px;
+    font-family: 'Fjalla One', sans-serif;
+
+    /*margin: auto;*/
+    /*position: absolute;*/
+    position: relative;
+    left: 30%;
 }
 
-.imageCategoryButton {
+.braten{
+    background-color: #ea86b6;
+    border: 3px solid #e05297;
+}
 
+.braten:hover {
+    box-shadow: 0 0px 10px rgba(205, 255, 252, 1), 0 0px 6px rgba(224, 82, 151, 1);
+}
+
+.braten:active {
+    box-shadow: 0 0px 10px rgba(205, 255, 252, 1), 0 0px 6px rgba(224, 82, 151, 1);
+}
+
+.Suppe{
+    background-color: #ffb26b;
+    border: 3px solid #ff7b54;
+}
+
+.Suppe:hover {
+    box-shadow: 0 0px 10px rgba(205, 255, 252, 1), 0 0px 6px rgba(255, 123, 84, 1);
+}
+
+.Suppe:active {
+    box-shadow: 0 0px 10px rgba(205, 255, 252, 1), 0 0px 6px rgba(255, 123, 84, 1);
+}
+
+.fisch{
+    background-color: #cdfffc;
+    border: 3px solid #65d6ce;
+}
+.fisch:hover {
+    box-shadow: 0 0px 10px rgba(205, 255, 252, 1), 0 0px 6px rgba(101, 214, 206, 1);
+}
+.fisch:active {
+    box-shadow: 0 0px 10px rgba(205, 255, 252, 1), 0 0px 6px rgba(101, 214, 206, 1);
+}
+
+.vegetarisch{
+    background-color: #adce74;
+    border: 3px solid #61b15a;
+}
+
+.vegetarisch:hover {
+    box-shadow: 0 0px 10px rgba(205, 255, 252, 1), 0 0px 6px rgba(97, 177, 90, 1);
+}
+.vegetarisch:active {
+    box-shadow: 0 0px 10px rgba(205, 255, 252, 1), 0 0px 6px rgba(97, 177, 90, 1);
+}
+
+.border {
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);*/
+    border-width: 4px ;
 }
 
 

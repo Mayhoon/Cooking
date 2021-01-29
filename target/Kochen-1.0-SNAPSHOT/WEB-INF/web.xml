@@ -14,6 +14,10 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <welcome-file-list>
+        <welcome-file>search.jsp</welcome-file>
+    </welcome-file-list>
+
 
 <!--Servlet name need to match each other but other than that can be named anything-->
 <!--The url pattern needs to be called by the action attribute of the html form-->
