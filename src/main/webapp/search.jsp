@@ -25,6 +25,7 @@
     <%@include file="/resources/styles/background.css" %>
 <%--    <%@include file="/resources/javascript/extention/choices.js" %>--%>
 <%--    <%@include file="/resources/javascript/extention/select.js" %>--%>
+    <%@include file="resources/javascript"
 </style>
 
 <body>
@@ -40,43 +41,61 @@
                     </div>
                     <input id="search" type="text" placeholder="Suchen..." />
                     <div class="result-count">
-                        <span>108 </span>results</div>
+                        <span>108 </span>Rezepte</div>
                 </div>
             </div>
-            <div class="advance-search">
-                <span class="desc">Ergebnisse filtern</span>
-                <div class="row">
-                    <div class="input-field">
-                        <div class="input-select">
-                            <select data-trigger="" name="choices-single-defaul">
-                                <option placeholder="" value="">ACCESSORIES</option>
-                                <option>ACCESSORIES</option>
-                                <option>SUBJECT B</option>
-                                <option>SUBJECT C</option>
-                            </select>
-                        </div>
+            <div class="row">
+                <div class="card"></div>
+
+                <div class="card-body card">
+                    <div class="shadow-sm p-3 mb-4 bg-white rounded">
+                        <h5 class="card-title  card-title">${recipe.recipe_name}</h5>
+                        <p class="card-text text-muted text-left description">${recipe.description}</p>
                     </div>
-                    <div class="input-field">
-                        <div class="input-select">
-                            <select data-trigger="" name="choices-single-defaul">
-                                <option placeholder="" value="">COLOR</option>
-                                <option>GREEN</option>
-                                <option>SUBJECT B</option>
-                                <option>SUBJECT C</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="input-field">
-                        <div class="input-select">
-                            <select data-trigger="" name="choices-single-defaul">
-                                <option placeholder="" value="">SIZE</option>
-                                <option>SIZE</option>
-                                <option>SUBJECT B</option>
-                                <option>SUBJECT C</option>
-                            </select>
-                        </div>
+                    <div class="d-flex align-items-center justify-content-between shadow-sm p-3 bg-white rounded">
+                        <%--                        <h7 class="card-text medium mb-0">--%>
+                        <%--                            <h7 class="fa fa-picture-o"></h7>--%>
+                        <%--                        </h7>--%>
+                        <h7 class="card-text bi bi-clipboard-data" style="color:${recipe.hex_color}"> ${recipe.difficulty_desc}</h7>
+                        <%--                        <h7 class="card-text">${recipe.id}</h7>--%>
+                        <h7 class="card-text">${recipe.cooking_time} Minuten </h7>
                     </div>
                 </div>
+            </div>
+<%--            <div class="advance-search">--%>
+<%--                <span class="desc">Ergebnisse filtern</span>--%>
+<%--                <div class="row">--%>
+<%--                    <div class="input-field">--%>
+<%--                        <div class="input-select">--%>
+<%--                            <select data-trigger="" name="choices-single-defaul">--%>
+<%--                                <option placeholder="" value="">ACCESSORIES</option>--%>
+<%--                                <option>ACCESSORIES</option>--%>
+<%--                                <option>SUBJECT B</option>--%>
+<%--                                <option>SUBJECT C</option>--%>
+<%--                            </select>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="input-field">--%>
+<%--                        <div class="input-select">--%>
+<%--                            <select data-trigger="" name="choices-single-defaul">--%>
+<%--                                <option placeholder="" value="">COLOR</option>--%>
+<%--                                <option>GREEN</option>--%>
+<%--                                <option>SUBJECT B</option>--%>
+<%--                                <option>SUBJECT C</option>--%>
+<%--                            </select>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="input-field">--%>
+<%--                        <div class="input-select">--%>
+<%--                            <select data-trigger="" name="choices-single-defaul">--%>
+<%--                                <option placeholder="" value="">SIZE</option>--%>
+<%--                                <option>SIZE</option>--%>
+<%--                                <option>SUBJECT B</option>--%>
+<%--                                <option>SUBJECT C</option>--%>
+<%--                            </select>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
 
                 <div class="row second">
                     <div class="input-field">

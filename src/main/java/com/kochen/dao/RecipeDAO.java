@@ -12,25 +12,25 @@ public abstract class RecipeDAO {
         String url = "jdbc:mysql://localhost:3306/cooking";
         String username = "root";
         String password = "root";
-
         Connection connection = DriverManager.getConnection(url, username, password);
         Statement statement = connection.createStatement();
 
-        String query = "select * from recipes";
-        ResultSet resultSet = statement.executeQuery(query);
-
         ArrayList <Map> arrayList = new ArrayList();
+        String query = "SELECT * FROM recipes FULL JOIN difficulty ON difficulty = difficulty.id";
+        ResultSet resultSet = statement.executeQuery(query);
 
         while(resultSet.next()){
             int columnSize = resultSet.getMetaData().getColumnCount();
+
+            //Get column data
             Map m = new HashMap<String, String>();
             for(int i = 1; i <= columnSize; i++) {
                 m.put(resultSet.getMetaData().getColumnName(i), resultSet.getString(i));
             }
             arrayList.add(m);
         }
-
         resultSet.close();
+        statement.close();
 
         System.out.println(arrayList.size());
         System.out.println(arrayList);
