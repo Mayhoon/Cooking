@@ -43,16 +43,13 @@
 
                 <div class="card-body card">
                     <div class="shadow-sm p-3 mb-4 bg-white rounded">
-                        <h5 class="card-title  card-title">${recipe.recipe_name}</h5>
+                        <h5 class="card-title">${recipe.recipe_name}</h5>
                         <p class="card-text text-muted text-left description">${recipe.description}</p>
                     </div>
                     <div class="d-flex align-items-center justify-content-between shadow-sm p-3 bg-white rounded">
-<%--                        <h7 class="card-text medium mb-0">--%>
-<%--                            <h7 class="fa fa-picture-o"></h7>--%>
-<%--                        </h7>--%>
                         <h7 class="card-text bi bi-clipboard-data" style="color:${recipe.hex_color}"> ${recipe.difficulty_desc}</h7>
-<%--                        <h7 class="card-text">${recipe.id}</h7>--%>
                         <h7 class="card-text">${recipe.cooking_time} Minuten </h7>
+                        <i class="bi bi-search"></i>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,79 @@
+/* Styles for wrapping the search box */
+
+/*.main {*/
+/*    width: 50%;*/
+/*    margin: 50px auto;*/
+/*}*/
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.my-card {
+    border:none;
+    /*background-color: transparent;*/
+}
+
+.my-row{
+    /*border-color: #4ea63f;*/
+    /*border-radius: 3px;*/
+    /*border-width: 2px;*/
+    /*border: 3px dotted greenyellow;*/
+}
+
+.first-row {
+    margin-top: 30vh;
+}
+
+.md-outline.select-wrapper+label {
+    top: .5em !important;
+    z-index: 2 !important;
+}
+
+.my-select {
+    margin-left: 0px;
+    float: none;
+}
+
+.submitButton {
+    margin-left: 1px;
+    border: none;
+}
+
+.submitButton:focus {
+    border-width: 1px;
+}
+
+.recipetype {
+    color: #57b846;
+    margin-bottom: 5px;
+}
+
+.time {
+    color: #f05454;
+    margin-bottom: 5px;
+}
+
+.recipeSelectDiv {
+    float: left;
+    margin-right: 30px;
+}
+
+.timeSelectDiv {
+    /*float: right;*/
+    /*margin-right: 0px;*/
+}
