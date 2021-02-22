@@ -7,12 +7,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public abstract class RecipeDAO {
@@ -50,33 +52,22 @@ public abstract class RecipeDAO {
 
     }
         public static void main (String[]args){
-//            Example example = new Example();
-//            example.setId(33);
-//            example.setNames("Hubert");
-//
-            Recipe recipe = new Recipe();
-            recipe.setRecipe_name("Lecker schmecker Rezept");
-            recipe.setDifficulty(1);
-            recipe.setDescription("Test Rezept hibernate");
-            recipe.setCooking_time(20);
-            recipe.setImage_url("www.google.com");
-            recipe.setUrl("www.google.com");
-            recipe.setCategory(1);
-
             Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
             SessionFactory sessionFactory = cfg.buildSessionFactory();
             Session session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
 
-//        recipe = session.get(Recipe.class, 1);
-
-//            session
-
-            session.save(recipe);
+            String searchbarInput = "aufil";
+            String time = "15";
+            String recipeType = "1";
 
 
-            transaction.commit();
-            System.out.println(recipe.toString());
+            Query query = session.createQuery("select count(recipe) from Recipe recipe where cooking_time="+time+" and category="+recipeType+"and recipe_name like'%"+searchbarInput+"%'");
+            long result = (long) query.list().get(0);
+            System.out.println(result);
+
+            session.getTransaction().commit();
+            session.close();
 
         }
 

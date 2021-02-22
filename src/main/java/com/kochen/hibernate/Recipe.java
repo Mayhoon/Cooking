@@ -18,9 +18,6 @@ public class Recipe {
     @Column(name = "url")
     private String url;
 
-    @Column(name = "ingredients")
-    private int ingredients;
-
     @Column(name = "category")
     private int category;
 
@@ -61,14 +58,6 @@ public class Recipe {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public int getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(int ingredients) {
-        this.ingredients = ingredients;
     }
 
     public int getCategory() {

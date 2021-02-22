@@ -18,8 +18,6 @@
             crossorigin="anonymous"></script>
 
 
-
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -43,23 +41,42 @@
 
 <script>
     let searchbar, time, recipeType;
+    let liste = [searchbar, time, recipeType];
 
     function saveFormValues() {
-        searchbar = $('searchField').val();
-        time = $('timeSelect').val();
-        recipeType = $('recipeTypeSelect').val();
+        searchbar = $("searchField").attr('value');
+        time = $("#timeSelect").val();
+        recipeType = $("#recipeTypeSelect").val();
     }
 
     $(document).ready(function () {
         saveFormValues();
 
-        $('#form').on('submit', function() {
-            alert('You submitted the form!');
-            window.location.href = 'http://localhost:8081/Kochen_war/galery.jsp';
-            // $.post('/galery.jsp', { searchbar: searchbar, time: time, recipeType:recipeType } );
+        $('#form').on('submit', function () {
+            window.location.replace("/galery");
+            window.location.replace("galery");
+            // alert('You submitted the form!');
+            $.ajax({
+                type: "GET",
+                url: "searchGalery",
+                dataType: "json",
+                data: {
+                    searchbar: searchbar,
+                    time: time,
+                    test: recipeType
+                },
+                success(data) {
+                    console.log(data);
+                }
+            })
         });
 
     });
+
+    $("input, select").change(function () {
+        formChange()
+    });
+
 
     function formChange() {
         saveFormValues();
@@ -67,56 +84,27 @@
     }
 
     function queryDB() {
-        // let list = [searchbar, time, recipeType];
-        // let test = "Max";
-
-        // $.ajax({
-        //     url: 'getMatchingResults',
-        //     data: {
-        //         time: test
-        //     },
-        //     success: function (responseText) {
-        //         console.log(responseText);
-        //     }
-        // });
+        console.log(searchbar);
+        console.log(time);
+        console.log(recipeType);
 
         $.ajax({
             type: "GET",
             url: "weRobot",
             dataType: "json",
             data: {
-                time: 'time',
-                test: 'eintest'
+                searchbar: searchbar,
+                time: time,
+                recipeType: recipeType
             },
             success(data) {
                 console.log(data);
             }
-        }).done(function (data) {
-            alert("done");
         });
-
         return false;
     }
 
-    function submit() {
-        $.ajax({
-            type: "GET",
-            url: "searchGalery",
-            dataType: "json",
-            data: {
-                searchbar: searchbar,
-                time: time,
-                test: recipeType
-            },
-            success(data) {
-                console.log(data);
-            }
-        })
-    }
-
-
 </script>
-
 
 
 <form id="form">
@@ -126,7 +114,7 @@
                 <div class="card-body my-card">
                     <div class="shadow-sm p-3 bg-white rounded">
                         <div class="input-group rounded">
-                            <input id="searchField" type="search" class="form-control rounded"
+                            <input id="searchField" type="text" class="form-control rounded"
                                    placeholder="Rezept suchen"
                                    aria-label="Search"
                                    aria-describedby="search-addon"/>
