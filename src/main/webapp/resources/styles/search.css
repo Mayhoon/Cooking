@@ -73,7 +73,13 @@
     margin-right: 30px;
 }
 
-.timeSelectDiv {
-    /*float: right;*/
-    /*margin-right: 0px;*/
+.recipeAmount {
+    width: 100%;
+    text-align:center;
+}
+
+.recipeAmountText{
+    margin:auto;
+    /*background-color:green;*/
+    color: #6ddccf;
 }

@@ -11,6 +11,7 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.jdbc.time_zone">UTC</property>
 
         <mapping class="com.kochen.hibernate.Recipe"/>
         <mapping class="com.kochen.hibernate.Example"/>

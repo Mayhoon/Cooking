@@ -1,6 +1,5 @@
 package com.kochen.dao;
 
-import com.kochen.hibernate.Example;
 import com.kochen.hibernate.Recipe;
 import com.kochen.jbdc.Connector;
 import org.hibernate.Session;
@@ -23,7 +22,7 @@ public abstract class RecipeDAO {
         Statement statement = Connector.connect();
 
         ArrayList<Map> arrayList = new ArrayList();
-        String query = "SELECT * FROM recipe FULL JOIN difficulty ON difficulty = difficulty.id";
+        String query = "SELECT * FROM recipe FULL JOIN difficulty ON difficulty = difficulty.id where recipe.recipe_name = 'Kartoffelauflauf'";
         ResultSet resultSet = statement.executeQuery(query);
 
         while (resultSet.next()) {
@@ -51,24 +50,33 @@ public abstract class RecipeDAO {
         return resultSet.getString(1);
 
     }
-        public static void main (String[]args){
-            Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
-            SessionFactory sessionFactory = cfg.buildSessionFactory();
-            Session session = sessionFactory.openSession();
-            Transaction transaction = session.beginTransaction();
 
-            String searchbarInput = "aufil";
-            String time = "15";
-            String recipeType = "1";
+    public static void main(String[] args) {
+        String input = "Kar";
+        String category = "1";
+        int time = 15;
+
+        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
+        SessionFactory sessionFactory = cfg.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "from Recipe r where r.recipe_name like :input and r.category = :category and r.cooking_time<= :time";
+
+        List result = session.createQuery(hql).setParameter("input", "%" + input + "%")
+                .setParameter("category", category)
+                .setParameter("time", time).list();
+
+//            String hql = "from Recipe r where r.recipe_name like :input";
+//            List result = session.createQuery(hql).setParameter("input", "%"+input+"%").list();
+
+        int s = result.size();
+        System.out.println(s);
+
+        transaction.commit();
+        session.close();
 
 
-            Query query = session.createQuery("select count(recipe) from Recipe recipe where cooking_time="+time+" and category="+recipeType+"and recipe_name like'%"+searchbarInput+"%'");
-            long result = (long) query.list().get(0);
-            System.out.println(result);
-
-            session.getTransaction().commit();
-            session.close();
-
-        }
+    }
 
 }

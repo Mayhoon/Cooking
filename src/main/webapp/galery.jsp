@@ -37,9 +37,11 @@
         <div class="col-xs-12 col-md-8 col-lg-3 my-col">
             <div class="card">
 
+                <a href="${recipe.url}" target="_blank">
                 <img class="img-fluid card-img-top "
                      src="${recipe.image_url}"
-                     alt="Card image">
+                     alt="Card image"/>
+                </a>
 
                 <div class="card-body card">
                     <div class="shadow-sm p-3 mb-4 bg-white rounded">
