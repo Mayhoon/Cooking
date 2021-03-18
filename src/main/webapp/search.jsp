@@ -58,11 +58,7 @@
     function formChange() {
         queryDB();
         // saveFormValues();
-
     }
-
-
-
 
     $( ".searchField" ).val().change(function() {
 
