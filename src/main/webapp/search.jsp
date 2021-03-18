@@ -25,7 +25,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="icon" type="image/png" href="/resources/images/favicon-96x96.png">
 
-    <%@include file="/resources/javascript/searchRecipe.js" %>
+<%--    <%@include file="/resources/javascript/searchRecipe.js" %>--%>
 
 </head>
 
@@ -46,33 +46,13 @@
     }
 
     $(document).ready(function () {
-
         let searchbar = $("#searchField").val();
         let time = $("#timeSelect").val();
         let recipeType = $("#recipeTypeSelect").val();
 
-        $('#form').on('submit', function () {
-            alert('You submitted the form!');
-            // $.ajax({
-            //     type: "GET",
-            //     url: "galery",
-            //     dataType: "json",
-            //     data: {
-            //         searchbar: searchbar,
-            //         time: time,
-            //         test: recipeType
-            //     },
-            //     success(data) {
-            //         console.log(data);
-            //     }
-            // })
-        });
-
         $("#searchField").on("input", function() {
             formChange();
         });
-
-
     });
 
     function formChange() {

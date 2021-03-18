@@ -26,7 +26,6 @@
     <%@include file="/resources/svg/stopwatch.svg" %>
 </style>
 <body>
-
 <div class="container-fluid my-container">
     <div class="row justify-content-around align-items-top my-row">
         <c:forEach begin="0" end="${response.size()}" items="${response}" var="recipe" varStatus="loop">
@@ -37,20 +36,22 @@
         <div class="col-xs-12 col-md-8 col-lg-3 my-col">
             <div class="card">
 
-                <a href="${recipe.url}" target="_blank">
-                <img class="img-fluid card-img-top "
-                     src="${recipe.image_url}"
-                     alt="Card image"/>
+                <a href="${recipe.getUrl()}" target="_blank">
+                    <img class="img-fluid card-img-top "
+                         src="${recipe.getImage_url()}"
+                         alt="Card image"/>
                 </a>
 
                 <div class="card-body card">
                     <div class="shadow-sm p-3 mb-4 bg-white rounded">
-                        <h5 class="card-title">${recipe.recipe_name}</h5>
-                        <p class="card-text text-muted text-left description">${recipe.description}</p>
+                        <h5 class="card-title">${recipe.getRecipe_name()}</h5>
+                        <p class="card-text text-muted text-left description">${recipe.getDescription()}</p>
                     </div>
                     <div class="d-flex align-items-center justify-content-between shadow-sm p-3 bg-white rounded">
-                        <h7 class="card-text bi bi-clipboard-data" style="color:${recipe.hex_color}"> ${recipe.difficulty_desc}</h7>
-                        <h7 class="card-text">${recipe.cooking_time} Minuten </h7>
+                        <h7 class="card-text bi bi-clipboard-data"
+                            style="color: #d35d6e"> ${recipe.getDifficulty()}</h7>
+                        <h7 class="card-text">${recipe.getCooking_time()} Minuten</h7>
+                            <%--                        ${recipe.hex_color}--%>
                         <i class="bi bi-search"></i>
                     </div>
                 </div>

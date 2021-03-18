@@ -30,6 +30,8 @@ public class Recipe {
     @Column(name = "image_url")
     private String image_url;
 
+//    @OneToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name="difficulty", referencedColumnName="id")
     @Column(name = "difficulty")
     private int difficulty;
 
