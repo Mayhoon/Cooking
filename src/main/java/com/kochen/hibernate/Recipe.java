@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 public class Recipe {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue
     private int id;
 
@@ -30,10 +29,13 @@ public class Recipe {
     @Column(name = "image_url")
     private String image_url;
 
-//    @OneToOne(fetch = FetchType.LAZY)
+    //    @OneToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name="difficulty", referencedColumnName="id")
-    @Column(name = "difficulty")
-    private int difficulty;
+//    @Column(name = "difficulty")
+
+    @ManyToOne
+    @JoinColumn(name="difficulty", referencedColumnName = "id")
+    public Difficulty difficulty;
 
     @Column(name = "cooking_time")
     private int cooking_time;
@@ -44,6 +46,14 @@ public class Recipe {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 
     public String getRecipe_name() {
@@ -92,14 +102,6 @@ public class Recipe {
 
     public void setImage_url(String image_url) {
         this.image_url = image_url;
-    }
-
-    public int getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(int difficulty) {
-        this.difficulty = difficulty;
     }
 
     public int getCooking_time() {

@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class Difficulty {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue
     private int id;
 

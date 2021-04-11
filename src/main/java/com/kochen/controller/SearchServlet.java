@@ -48,11 +48,6 @@ public class SearchServlet extends HttpServlet {
             String hql = "from Recipe r where r.recipe_name like :input and r.category = :category and r.cooking_time<= :time";
             ArrayList<Recipe> result = (ArrayList<Recipe>) session.createQuery(hql).setParameter("input", "%" + input + "%").setParameter("category", category).setParameter("time", time).list();
             recipeAmount = result.size();
-
-            for (int i = 0; i < result.size(); i++) {
-                System.out.println(result.get(i).getDescription());
-                System.out.println(result.get(i));
-            }
         }
 
         session.getTransaction().commit();

@@ -51,32 +51,32 @@ public abstract class RecipeDAO {
 
     }
 
-    public static void main(String[] args) {
-        String input = "Kar";
-        String category = "1";
-        int time = 15;
-
-        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
-        SessionFactory sessionFactory = cfg.buildSessionFactory();
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-
-        String hql = "from Recipe r where r.recipe_name like :input and r.category = :category and r.cooking_time<= :time";
-
-        List result = session.createQuery(hql).setParameter("input", "%" + input + "%")
-                .setParameter("category", category)
-                .setParameter("time", time).list();
-
-//            String hql = "from Recipe r where r.recipe_name like :input";
-//            List result = session.createQuery(hql).setParameter("input", "%"+input+"%").list();
-
-        int s = result.size();
-        System.out.println(s);
-
-        transaction.commit();
-        session.close();
-
-
-    }
+//    public static void main(String[] args) {
+//        String input = "Kar";
+//        String category = "1";
+//        int time = 15;
+//
+//        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
+//        SessionFactory sessionFactory = cfg.buildSessionFactory();
+//        Session session = sessionFactory.openSession();
+//        Transaction transaction = session.beginTransaction();
+//
+//        String hql = "from Recipe r where r.recipe_name like :input and r.category = :category and r.cooking_time<= :time";
+//
+//        List result = session.createQuery(hql).setParameter("input", "%" + input + "%")
+//                .setParameter("category", category)
+//                .setParameter("time", time).list();
+//
+////            String hql = "from Recipe r where r.recipe_name like :input";
+////            List result = session.createQuery(hql).setParameter("input", "%"+input+"%").list();
+//
+//        int s = result.size();
+//        System.out.println(s);
+//
+//        transaction.commit();
+//        session.close();
+//
+//
+//    }
 
 }

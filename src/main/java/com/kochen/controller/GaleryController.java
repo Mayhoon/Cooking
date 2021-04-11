@@ -33,12 +33,6 @@ public class GaleryController {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        //Execute hql
-//        System.out.println("Category zero");
-//        String hql = "from Recipe r where r.recipe_name like :input and r.cooking_time<= :time and r.difficulty= :recipeType";
-//        List result = session.createQuery(hql).setParameter("input", "%" + userInput + "%").setParameter("time", time).setParameter("recipeType", recipeType).list();
-//        ArrayList recipeList = (ArrayList) result;
-
         ArrayList <Recipe> recipeList = null;
 
         if (category == 0) {
@@ -46,7 +40,6 @@ public class GaleryController {
             String hql = "from Recipe r where r.recipe_name like :input and r.cooking_time<= :time";
             recipeList = (ArrayList) session.createQuery(hql).setParameter("input", "%" + userInput + "%").setParameter("time", time).list();
             System.out.println(recipeList.size());
-//            recipeList = (ArrayList) result;
 
         } else {
             System.out.println("Category not zero");
@@ -57,9 +50,9 @@ public class GaleryController {
             System.out.println(recipeList.size());
         }
 
-        for(int i = 0; i < recipeList.size(); i++) {
-            System.out.println("Eintry: " + recipeList.get(i).getDescription());
-        }
+//        for(int i = 0; i < recipeList.size(); i++) {
+//            System.out.println("Eintry: " + recipeList.get(i).getDescription());
+//        }
 
         session.getTransaction().commit();
         session.close();
