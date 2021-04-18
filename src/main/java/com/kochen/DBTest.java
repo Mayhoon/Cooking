@@ -1,8 +1,5 @@
 package com.kochen;
 
-import com.kochen.hibernate.Recipe;
-import com.kochen.jbdc.HibernateUtil;
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
