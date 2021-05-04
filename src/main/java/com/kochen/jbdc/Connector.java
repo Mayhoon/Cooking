@@ -13,7 +13,7 @@ public class Connector {
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setUser("root");
         dataSource.setPassword("root");
-        dataSource.setServerName("jdbc:mysql://172.42.0.41:3306/cooking");
+        dataSource.setServerName("jdbc:mysql://database:3306/cooking");
 
         Connection connection = dataSource.getConnection();
         Statement statement = connection.createStatement();
