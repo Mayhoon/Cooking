@@ -1,5 +1,7 @@
 package com.kochen;
 
+import com.kochen.model.Recipe;
+import com.kochen.repository.RecipeRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -19,19 +21,5 @@ public class DBTest {
 
 
 
-
-//        try {
-//            Session session = HibernateUtil.getSessionFactory().openSession();
-//
-//
-//            Recipe recipe = session.get(Recipe.class, 1);
-//
-//            for(Recipe r : recipe) {
-//
-//            }
-//
-//            System.out.println(recipe.getDifficulty().getDescription());
-//        } catch (Exception e) {
-//        }
     }
 }
